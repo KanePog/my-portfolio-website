@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kane's Portfolio</title>
+  <script type="module" src="./index.js"></script>
+  <link rel="stylesheet" href="./index.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
@@ -84,9 +86,62 @@
     </div>
     
     <div id="projects">
-      <h1>Projects Section</h1>
-      <p>Here are my projects.</p>
-    </div>
+      <h1>Projects</h1>
+    
+      <!-- Project One: Guess the Number Game -->
+      <div class="project-section">
+        <div class="project-container">
+          <div class="project-description">
+            <h2>Guess the Number Game</h2>
+            <p>
+              This interactive number guessing game challenges users to guess a randomly generated number between 1 and 100. Built with HTML, CSS, and JavaScript, it highlights core front-end skills like DOM manipulation, event handling, and control flow using loops and conditionals.
+              <br><br>
+              I built this while learning through <strong>Mimo</strong>, a mobile-based coding platform that teaches programming through interactive, hands-on lessons—perfect for beginners getting into web development.
+              <br><br>
+              Players get real-time feedback after each guess and have a limited number of attempts, encouraging logical thinking. The game features a responsive design and custom styling to match the rest of the site, showcasing beginner JavaScript in a fun, practical way.
+            </p>
+          </div>
+    
+          <div class="project-demo">
+            <div class="guess-container">
+              <h2>Guess the Correct Number!</h2>
+              <p>Guess a number between 1 and 100.</p>
+              <input type="number" id="guess">
+              <br>
+              <button onclick="checkGuess()">Submit</button>
+              <button onclick="restartGame()">Restart</button>
+              <p id="feedback"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="project-section">
+        <div class="project-container">
+          <div class="project-description">
+            <h2>Wordle Clone (React)</h2>
+            <p>
+              This Wordle-style game is built with React, demonstrating my ability to work with components, state management, conditional rendering, and dynamic UI updates. I also used JSX and custom CSS to handle layout and responsiveness.
+              <br><br>
+              I developed this project to better understand modern front-end development workflows using Vite and React. It was a fun challenge that taught me how to manage game logic within React's lifecycle and improve component structure.
+              <br><br>
+              Try to guess the hidden five-letter word in six tries or less!
+            </p>
+          </div>
+      
+          <div class="project-demo">
+            <div class="react-container">
+              <iframe
+                src="https://KanePog.github.io/my-new-react-project/"
+                class="react-app-iframe"
+                width="100%"
+                height="600px"
+                style="border: none; border-radius: 24px;">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
     
     <div id="contact">
       <div class="contact-inner">
