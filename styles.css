@@ -522,6 +522,26 @@ h1 {
   max-width: 700px;
 }
 
+.portfolio-link {
+  text-align: center;
+  font-size: 1.4rem;
+  background-color: #2e2e2e;
+}
+
+.portfolio-link p {
+  color: #d3d3d3;
+}
+
+.portfolio-link a {
+  color: rgba(200, 100, 255, 0.9);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.portfolio-link a:hover {
+  color: #fff;
+}
+
 #contact {
   background-color: #2e2e2e;
   z-index: 2;
