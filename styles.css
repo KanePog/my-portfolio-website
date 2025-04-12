@@ -174,7 +174,7 @@ header.scrolled {
 
 .container {
   width: 100%;
-  padding-top: 80px;
+
 }
 
 #home, #about, #projects, #contact {
@@ -187,37 +187,59 @@ header.scrolled {
 #home {
   z-index: 1;
   display: flex;
-  flex-direction: row; /* Align text and image side by side */
-  justify-content: flex-start; /* Align the content to the left */
-  align-items: flex-start; /* Align items at the top */
-  padding: 100px 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
   position: relative;
 }
 
 .home-text {
   display: flex;
   flex-direction: column; /* Keep text stack vertically */
-  margin-right: 50px; /* Space between text and image */
+  align-items: center;
 }
 
 #home h1:first-of-type {
   font-size: 6rem;
   color: #2B2B2B; /* Dark gray */
-  margin: 30px 0 0 70px; /* Top margin only for first h1 */
-}
-
-#home h1:nth-of-type(2) {
-  font-size: 6rem;
-  color: #2B2B2B; /* Dark gray */
-  margin: 0 0 0 70px; /* No margin on top */
 }
 
 #home h2 {
   font-size: 3rem;
   color: #2B2B2B; /* Dark gray */
-  margin-bottom: 20px;
   font-weight: 300;
-  margin: 10px 0 0 70px;
+  margin-top: 10px;
+}
+
+.view-work-btn {
+  width: 300px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #2B2B2B;
+  margin-top: 40px;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  background-color: transparent;
+  color: #2B2B2B;
+  text-decoration: none;
+  position: relative;
+  box-shadow: none;
+}
+
+.view-work-btn::before,
+.view-work-btn::after {
+  content: "▼";
+  margin: 0 8px;
+  font-size: 1rem;
+  color: #2B2B2B; /* Or match the border/text color */
+}
+
+/* Glow on hover */
+.view-work-btn:hover {
+  transform: scale(1.03);
 }
 
 #about {
@@ -234,21 +256,20 @@ header.scrolled {
 
 .about-container {
   width: 100%;
-  max-width: 1200px; /* Optional: limit max width */
+  max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
 }
 
 .about-content {
   display: flex;
-  justify-content: space-between; /* Aligns the skills columns side by side */
-  align-items: flex-start;  /* Aligns both columns at the top */
   width: 100%;
 }
 
 .about-text {
-  width: 55%; /* Increased space for the description */
   padding-right: 20px;
+  font-size: 1.1rem; /* slight size bump */
+  line-height: 2; /* increase line height for more vertical space */
 }
 
 .about-skills, .about-graphic-skills {
@@ -257,6 +278,13 @@ header.scrolled {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.about-skills h3, .about-graphic-skills h3 {
+  font-size: 2rem;
+  color: #d3d3d3;
+  margin-bottom: 20px; /* Space between title and list */
+  text-align: left; /* Align title to the left */
 }
 
 .about-skills ul, .about-graphic-skills ul {
@@ -273,11 +301,12 @@ header.scrolled {
   align-items: center;
   background-color: #444;
   color: #fff;
-  padding: 12px 20px;
+  padding: 12px 0 12px 20px;
   border-radius: 10px;
   font-size: 1.2rem;
   transition: background-color 0.3s ease, transform 0.3s ease;
   text-align: center;
+  width: 300px;
 }
 
 .about-skills ul li i, .about-graphic-skills ul li i {
@@ -291,10 +320,8 @@ header.scrolled {
 }
 
 .about-skills ul li:hover i, .about-graphic-skills ul li:hover i {
-  color: #73c8a9;  /* Change icon color on hover */
+  color: rgba(200, 100, 255, 0.7);  /* Change icon color on hover */
 }
-
-
 
 @keyframes fadeInUp {
   to {
@@ -323,7 +350,7 @@ header.scrolled {
 /* Apply background color and other effects on hover */
 .about-graphic-skills ul li:hover svg {
   transform: scale(1.1);  /* Slightly enlarge icon on hover */
-  color: #73c8a9;  /* Change icon color on hover */
+  color: rgba(200, 100, 255, 0.7);  /* Change icon color on hover */
 }
 
 /* Ensure consistency in icon background color and text color */
@@ -346,18 +373,13 @@ header.scrolled {
 /* Adjusting icon size when hovered */
 .about-graphic-skills ul li:hover i,
 .about-graphic-skills ul li:hover svg {
-  color: #73c8a9;  /* Change color of both icon and text on hover */
+  color: rgba(200, 100, 255, 0.7);  /* Change color of both icon and text on hover */
 }
-
-
-
-
 
 h1 {
   font-size: 3rem;
   color: #d3d3d3;
   margin-bottom: 20px;
-  text-align: left;
 }
 
 
@@ -369,12 +391,21 @@ h1 {
 
 #contact {
   background-color: #2e2e2e;
-  z-index: 2; /* slightly darker gray */
+  z-index: 2;
   color: #d3d3d3;
+  display: flex;
+  justify-content: center;    /* center horizontally */
+  align-items: center;        /* center vertically */
+  min-height: 100vh;          /* make the section fill the screen */
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact-inner {
+  margin: 0 auto;
 }
 
 .contact-title {
-  text-align: center;
   font-size: 3rem;
   margin-bottom: 40px;
   color: #d3d3d3;
@@ -383,9 +414,8 @@ h1 {
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 25px; /* More spacing between fields */
-  max-width: 500px;
-  margin: 0 auto;
+  gap: 25px;
+  width: 500px;
 }
 
 .contact-form input,
@@ -394,7 +424,7 @@ h1 {
   font-size: 1rem;
   border: none;
   border-radius: 10px;
-  background-color: #444; /* Slightly darker to fit your theme */
+  background-color: #444;
   color: #fff;
 }
 
@@ -421,7 +451,6 @@ h1 {
 
 .social-links {
   margin-top: 30px;
-  text-align: center;
 }
 
 .social-links a {
