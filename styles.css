@@ -589,7 +589,7 @@ h1 {
 
 .contact-form button {
   padding: 15px;
-  background-color: #2B2B2B;
+  background-color: rgba(200, 100, 255, 0.7);
   color: white;
   font-weight: bold;
   border: none;
